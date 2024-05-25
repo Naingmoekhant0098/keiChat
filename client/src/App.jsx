@@ -40,7 +40,7 @@ const App = () => {
             withCredentials: true,
           }
         );
-        alert(res.status)
+       
 
         if (res.status !== 200) {
           toast.error("Fail To Login");
@@ -51,7 +51,9 @@ const App = () => {
       } else {
         toast.error("Account Error");
       }
-    } catch (error) {}
+    } catch (error) {
+      alert(error.message)
+    }
   };
 
   return (
