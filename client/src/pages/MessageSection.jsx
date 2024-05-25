@@ -190,9 +190,9 @@ const MessageSection = ({
     }
   };
   const storeImg = async (downloadUrl) => {
-    if(!downloadUrl){
-      return;
-    }
+    if(downloadUrl){
+     
+    
     const sendedMessage = {
       senderId: currentUser?._id,
       chatId: currentchat?._id,
@@ -216,12 +216,13 @@ const MessageSection = ({
         fileUrl(null);
       }
     } catch (error) {}
+  }
   };
 
   const sendMessage = async () => {
-    if(!message){
-      return;
-    }
+    if(message){
+       
+   
     const sendedMessage = {
       senderId: currentUser?._id,
       chatId: currentchat?._id,
@@ -248,6 +249,7 @@ const MessageSection = ({
         setTyping("");
       }
     } catch (error) {}
+  }
   };
 
   useEffect(() => {
