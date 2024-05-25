@@ -29,7 +29,7 @@ const App = () => {
   
       if (resultFromGoogle) {
         const res = await axios.post(
-          "http://localhost:4000/auth",
+          "http://localhost:4000/auth/",
           {
             email: resultFromGoogle.user.email,
             username: resultFromGoogle.user.displayName,
