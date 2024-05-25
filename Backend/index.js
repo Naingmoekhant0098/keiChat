@@ -10,7 +10,7 @@ require('dotenv').config();
 const path = require('path')
 app.use(cookieParser())
 app.use(cors({
-    origin : ['http://localhost:5173','https://keichat-5.onrender.com/'],
+    origin : ['http://localhost:5173','https://keichat-5.onrender.com'],
     credentials : true,
 }))
 

@@ -335,7 +335,7 @@ const Chat = () => {
                   <div
                     className={` w-full flex items-center shadow  hover:bg-slate-700 gap-3 px-2 py-2 rounded-lg cursor-pointer
                     `}
-                    onClick={() => handleAddNew(chat._id)}
+                    onClick={() => handleAddNew(chat?._id)}
                   >
                     <div className=" relative">
                       <Avatar img={chat?.profile} rounded />

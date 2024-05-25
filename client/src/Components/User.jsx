@@ -53,7 +53,7 @@ const User = ({ data, currentchat, onlineusers, seenMessage }) => {
         <div className=" flex items-center justify-between">
           <span className=" text-xs text-gray-400">
             {data?.lastMessage?.substring(0, 10)}
-            {data.lastMessage.length > 10 ? "..." : ""}
+            {data.lastMessage?.length > 10 ? "..." : ""}
           </span>
           
         </div>

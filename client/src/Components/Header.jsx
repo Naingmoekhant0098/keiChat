@@ -29,7 +29,8 @@ const Header = ({signInWithGoogle}) => {
   return (
     <div className=" flex relative  mx-auto items-center justify-between px-4 py-2 md:py-3 border-b border-gray-600">
       <div>
-        <img src="/chat.png" alt="" className="  w-14" />
+       <Link to={'/'}>
+       <img src="/chat.png" alt="" className="  w-14" /></Link>
       </div>
       <div>
         {currentUser ? (
