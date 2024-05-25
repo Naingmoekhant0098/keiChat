@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Backend/index.js && socket/index.js",
+    "start": "node Backend/index.js && node socket/index.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
