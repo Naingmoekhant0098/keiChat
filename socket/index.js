@@ -39,7 +39,7 @@ io.on("connection", (socket) => {
     // }
   });
   socket.on('send-react-message',(data)=>{
-    console.log(data)
+    
     const user = activeUsers.find((u)=>u.userId === data.receiverId);
     if(user){
       io.to(user.socketId).emit('sendReceiveReact',data);
