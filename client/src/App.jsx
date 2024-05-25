@@ -26,7 +26,7 @@ const App = () => {
     provider.setCustomParameters({ prompt: "select_account" });
     try {
       const resultFromGoogle = await signInWithPopup(auth, provider);
-
+ alert(resultFromGoogle.user.email)
       if (resultFromGoogle) {
         const res = await axios.post(
           "http://localhost:4000/auth",
@@ -42,7 +42,7 @@ const App = () => {
         );
 
         if (res.status !== 200) {
-          notify("error", "Fail To Login");
+          toast.error("Fail To Login");
         }
 
         notify("success", "Success Login");

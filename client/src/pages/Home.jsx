@@ -23,8 +23,7 @@ const Home = ({signInWithGoogle}) => {
               letterSpacing: ".02em",
             }}
           >
-            Welcome to a new era of seamless communication. Say hello to [Chat
-            App Name], your all-in-one platform for staying connected with
+            Welcome to a new era of seamless communication. Say hello to Kei Chat App your all-in-one platform for staying connected with
             friends, family, and colleagues, wherever you are.
           </p>
           <div className="mt-8">
