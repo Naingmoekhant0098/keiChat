@@ -190,6 +190,9 @@ const MessageSection = ({
     }
   };
   const storeImg = async (downloadUrl) => {
+    if(!downloadUrl){
+      return;
+    }
     const sendedMessage = {
       senderId: currentUser?._id,
       chatId: currentchat?._id,
@@ -216,6 +219,9 @@ const MessageSection = ({
   };
 
   const sendMessage = async () => {
+    if(!message){
+      return;
+    }
     const sendedMessage = {
       senderId: currentUser?._id,
       chatId: currentchat?._id,
