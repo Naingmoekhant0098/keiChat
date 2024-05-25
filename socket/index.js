@@ -1,6 +1,6 @@
 const io = require("socket.io")(8800, {
   cors: {
-    origin: ['http://localhost:5173','https://keichat-5.onrender.com'],
+    origin: ['http://localhost:5173','https://keichat-6.onrender.com'],
   },
 });
 
