@@ -13,16 +13,19 @@ app.use(cors({
     origin : 'http://localhost:5173',
     credentials : true,
 }))
+
 const __dir = path.resolve();
+ 
 connect();
 app.use(express.json());
 app.use('/auth',authRouter)
 app.use('/chat',chatRouter);
 app.use('/message',messageRouter);
+app.use(express.static(path.join(__dir,'/client')))
 app.use('*',(req,res)=>{
-    res.sendFile(path.join(__dir,'client','dist','index.html'))
+    res.sendFile(path.join(__dir,'client/index.html'))
 })
-app.use(express.static(path.join(__dir, '/client')))
+
 app.listen(4000,()=>{
     console.log('Sever is running at port 4000')
 })
