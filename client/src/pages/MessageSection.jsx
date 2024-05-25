@@ -132,7 +132,7 @@ const MessageSection = ({
   useEffect(() => {
     const fetchMessage = async () => {
       const res = await axios.get(
-        `http://localhost:4000/message/${currentchat?._id}`,
+        `https://keichat-6.onrender.com/message/${currentchat?._id}`,
         {
           headers: { "Content-Type": "application/json" },
         }
@@ -200,7 +200,7 @@ const MessageSection = ({
     };
     try {
       const addMessage = await axios.post(
-        `http://localhost:4000/message`,
+        `https://keichat-6.onrender.com/message`,
         sendedMessage,
         {
           headers: { "Content-Type": "application/json" },
@@ -231,7 +231,7 @@ const MessageSection = ({
 
     try {
       const addMessage = await axios.post(
-        `http://localhost:4000/message`,
+        `https://keichat-6.onrender.com/message`,
         sendedMessage,
         {
           headers: { "Content-Type": "application/json" },
@@ -259,7 +259,7 @@ const MessageSection = ({
   const handleDelete = async (id) => {
     try {
       const deleteMessage = await axios.get(
-        `http://localhost:4000/message/deleteMessage/${id}`,
+        `https://keichat-6.onrender.com/message/deleteMessage/${id}`,
         {
           headers: { "Content-Type": "application/json" },
         }
@@ -290,7 +290,7 @@ const MessageSection = ({
 
     try {
       const resReact = await axios.put(
-        "http://localhost:4000/message/likeMessage",
+        "https://keichat-6.onrender.com/message/likeMessage",
         sendLike,
         {
           headers: { "Content-Type": "application/json" },

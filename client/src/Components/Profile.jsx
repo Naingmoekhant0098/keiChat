@@ -18,7 +18,7 @@ const Profile = ({ currentchat, onlineusers,setIsProfile }) => {
   useEffect(() => {
     const fetchUser = async () => {
       const res = await axios.get(
-        `http://localhost:4000/auth/getUser/${userId}`,
+        `https://keichat-6.onrender.com/auth/getUser/${userId}`,
         {
           headers: { "Content-Type": "application/json" },
         }
@@ -33,7 +33,7 @@ const Profile = ({ currentchat, onlineusers,setIsProfile }) => {
   useEffect(() => {
     const fetchMessage = async () => {
       const res = await axios.get(
-        `http://localhost:4000/message/${currentchat?._id}`,
+        `https://keichat-6.onrender.com/message/${currentchat?._id}`,
         {
           headers: { "Content-Type": "application/json" },
         }

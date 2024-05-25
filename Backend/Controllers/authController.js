@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 exports.logInGoogle = async (req, res, next) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-console.log(user)
+
     if (!user) {
       const newUser = new User({
         username: req.body.username,

@@ -15,7 +15,7 @@ const User = ({ data, currentchat, onlineusers, seenMessage }) => {
   useEffect(() => {
     const fetchUser = async () => {
       const res = await axios.get(
-        `http://localhost:4000/auth/getUser/${userId}`,
+        `https://keichat-6.onrender.com/auth/getUser/${userId}`,
         {
           headers: { "Content-Type": "application/json" },
         }

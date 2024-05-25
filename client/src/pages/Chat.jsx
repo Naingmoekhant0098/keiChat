@@ -37,7 +37,7 @@ const Chat = () => {
   useEffect(() => {
     const fetchChat = async () => {
       const res = await axios.get(
-        `http://localhost:4000/chat/${currentUser._id}`,
+        `https://keichat-6.onrender.com/chat/${currentUser._id}`,
         {
           headers: { "Content-Type": "application/json" },
         }
@@ -52,7 +52,7 @@ const Chat = () => {
   useEffect(() => {
     const fetchUers = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/auth/getUsers", {
+        const res = await axios.get("https://keichat-6.onrender.com/auth/getUsers", {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
         });
@@ -102,7 +102,7 @@ const Chat = () => {
     const fetchUser = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:4000/auth/getUsers?username=${searchData}`,
+          `https://keichat-6.onrender.com/auth/getUsers?username=${searchData}`,
           {
             headers: { "Content-Type": "application/json" },
             withCredentials: true,
@@ -169,7 +169,7 @@ const Chat = () => {
         if (data) {
           try {
             const updateSeen = await axios.put(
-              "http://localhost:4000/message/updateSeen",
+              "https://keichat-6.onrender.com/message/updateSeen",
               data,
               {
                 headers: { "Content-Type": "application/json" },
@@ -248,7 +248,7 @@ const Chat = () => {
 
   const handleAddNew = async (id) => {
     try {
-      const res = await axios.post("http://localhost:4000/chat", {
+      const res = await axios.post("https://keichat-6.onrender.com/chat", {
         senderUId: currentUser?._id,
         receiverUId: id,
       });
