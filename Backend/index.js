@@ -22,7 +22,7 @@ app.use('/message',messageRouter);
 app.use('*',(req,res)=>{
     res.sendFile(path.join(__dir,'client','dist','index.html'))
 })
-app.use(express.static(path.join(__dir, '/client/dist')))
+app.use(express.static(path.join(__dir, '/client')))
 app.listen(4000,()=>{
     console.log('Sever is running at port 4000')
 })
