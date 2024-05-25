@@ -5,7 +5,7 @@ exports.connect = async () => {
   try {
     // mongodb+srv://naingmoekhant098765:UCz7OowhlugjXFC8@keichat.wwc6fo2.mongodb.net/
     await mongoose
-      .connect('mongodb+srv://naingmoekhant098765:UCz7OowhlugjXFC8@keichat.wwc6fo2.mongodb.net/')
+      .connect(process.env.mongodb_str)
       .then((res) => {
         console.log("mongodb sever is connected");
       })
