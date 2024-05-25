@@ -263,7 +263,7 @@ const Chat = () => {
       }
     } catch (error) {}
   };
-
+ 
   return (
     <div className=" w-full flex h-screen md:max-h-[650px] relative">
       <div className="w-full md:w-1/5  p-4 max-h-full  overflow-hidden bg-slate-800  rounded-lg rounded-tr-none">
