@@ -23,9 +23,9 @@ app.use('/chat',chatRouter);
 app.use('/message',messageRouter);
 app.use(express.static(path.join(__dir,'/client')))
 app.use('*',(req,res)=>{
-    res.sendFile(path.join(__dir,'client/index.html'))
+    res.sendFile(path.join(__dir,'/client/index.html'))
 })
-
+console.log(path.join(__dir,'/client'))
 app.listen(4000,()=>{
     console.log('Sever is running at port 4000')
 })
