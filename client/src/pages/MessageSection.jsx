@@ -344,15 +344,16 @@ const MessageSection = ({
   };
 
   return (
-    <div className=" h-full flex flex-col gap-3 border-r border-l border-gray-700  relative no-scrollbar overflow-x-hidden ">
+    <div className="  h-full flex flex-col gap-3 border-r border-l border-gray-700    relative  no-scrollbar overflow-x-hidden ">
       <Model
         fileUrl={fileUrl}
         storeImg={storeImg}
         isFile={isFile}
         setIsFile={setIsFile}
       />
+<div className="w-full relative z-30">
 
-      <div className="w-full flex justify-between py-2  fixed top-0 z-[300] bg-[#1a1a1a]   px-2 border-b border-gray-700">
+      <div className="w-full flex justify-between py-2   fixed md:relative  top-0 z-[300] bg-[#1a1a1a]   px-2 border-b border-gray-700">
         <div className=" flex gap-2 items-center">
           <FaArrowLeft
             className="block md:hidden text-xl cursor-pointer"
@@ -395,6 +396,7 @@ const MessageSection = ({
           <IoEllipsisVerticalSharp className=" text-2xl cursor-pointer" />
         </div>
       </div>
+</div>
 
       <div className=" flex flex-1  p-2 rounded-lg flex-col gap-4 overflow-y-auto no-scrollbar ">
         {messages &&
@@ -413,7 +415,7 @@ const MessageSection = ({
           })}
       </div>
 
-      <div className="flex items-center w-full gap-1 px-3 py-3 fixed bottom-0 bg-[#1a1a1a]">
+      <div className="flex items-center w-full gap-1 px-3 py-3  fixed md:relative  bottom-0 bg-[#1a1a1a]">
         <div className=" text-xl cursor-pointer hover:text-purple-500">
           <ImAttachment onClick={() => clickImage.current.click()} />
           <input

@@ -386,11 +386,11 @@ const Chat = () => {
         )}
       </div>
       <div
-        className={`w-full border-r border-gray-700 ${
+        className={`w-full border-r border-gray-700    ${
           isProfile ? "md:block" : "md:hidden"
         } h-full md:w-1/5   p-4 px-2 ${
           currentchat === null ? "md:hidden" : "md:block"
-        }  bg-[#1a1a1a]  md:relative  absolute z-10 left-0 ${
+        }  bg-[#1a1a1a]  md:relative  absolute z-[300] left-0 ${
           isProfile ? "block" : "hidden"
         }`}
       >

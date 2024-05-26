@@ -1,5 +1,5 @@
 import { Avatar } from "flowbite-react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ImBlocked } from "react-icons/im";
 import { FaBell } from "react-icons/fa6";
 import { IoMdVideocam } from "react-icons/io";
@@ -29,6 +29,9 @@ const Profile = ({ currentchat, onlineusers,setIsProfile }) => {
     };
     fetchUser();
   }, [currentchat]);
+  useEffect(()=>{
+    scorllRec.current.scrollTo(0,0);
+  })
 
   useEffect(() => {
     const fetchMessage = async () => {
@@ -45,10 +48,11 @@ const Profile = ({ currentchat, onlineusers,setIsProfile }) => {
     };
     fetchMessage();
   }, [currentchat]);
+  const scorllRec = useRef();
   const isOnline = onlineusers.find((user) => user.userId === userId);
 
   return (
-    <div className=" flex flex-col gap-8">
+    <div className=" flex flex-col gap-8 bg-[#1a1a1a]" ref={scorllRec} >
   
      <div className=" flex items-center gap-3"> <FaArrowLeft className="  text-xl cursor-pointer" onClick={()=>setIsProfile(false)}/>
       <h1 className=" text-lg">Profile</h1></div>
