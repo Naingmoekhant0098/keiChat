@@ -305,7 +305,7 @@ const Chat = () => {
         </div>
       </div>
       <div
-        className={`w-full md:w-1/5 absolute transition duration-300 p-4 h-full bg-slate-800  rounded-lg rounded-tr-none ${
+        className={`w-full md:w-1/5 absolute transition duration-300 p-4  bg-slate-800  rounded-lg rounded-tr-none ${
           isAddNew ? "block" : "hidden"
         }  `}
       >
