@@ -344,7 +344,7 @@ const MessageSection = ({
   };
 
   return (
-    <div className=" h-full flex flex-col gap-3 border-r border-l border-gray-700  relative ">
+    <div className=" h-full flex flex-col gap-3 border-r border-l border-gray-700  relative no-scrollbar overflow-x-hidden ">
       <Model
         fileUrl={fileUrl}
         storeImg={storeImg}
@@ -422,6 +422,7 @@ const MessageSection = ({
             hidden
             ref={clickImage}
             onChange={imageHandler}
+           
           />
         </div>
         <div className=" flex flex-1">
@@ -431,10 +432,12 @@ const MessageSection = ({
             onChange={(e) => {
               setMessage(e), setTyping(e);
             }}
+            onFocus={()=>setIsFile(false)}
             onEnter={sendMessage}
             placeholder="Type a message"
             borderRadius={false}
             theme="auto"
+            disabled={isFile ? false : true}
           />
           {/* <TextInput placeholder="Send a message...." className=" w-full" /> */}
         </div>
