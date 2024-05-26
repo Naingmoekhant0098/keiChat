@@ -58,7 +58,7 @@ const App = () => {
 
   return (
     <div className=" w-full md:max-w-6xl mx-auto">
-      <Header signInWithGoogle={signInWithGoogle} />
+     
       <Routes>
         <Route
           path="/"

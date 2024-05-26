@@ -48,9 +48,9 @@ const Profile = ({ currentchat, onlineusers,setIsProfile }) => {
   const isOnline = onlineusers.find((user) => user.userId === userId);
 
   return (
-    <div className=" flex flex-col gap-8 ">
+    <div className=" flex flex-col gap-8">
   
-     <div className=" flex items-center gap-3"> <FaArrowLeft className="block md:hidden text-xl cursor-pointer" onClick={()=>setIsProfile(false)}/>
+     <div className=" flex items-center gap-3"> <FaArrowLeft className="  text-xl cursor-pointer" onClick={()=>setIsProfile(false)}/>
       <h1 className=" text-lg">Profile</h1></div>
       <div className=" text-center">
         <div className=" relative w-20 mx-auto">
@@ -62,7 +62,7 @@ const Profile = ({ currentchat, onlineusers,setIsProfile }) => {
       }
         </div>
         <h1 className=" mt-3">{userData?.username}</h1>
-        <span className=" text-xs text-gray-400">{userData?.email}</span>
+        <span className=" text-xs text-gray-400 text-wrap">{userData?.email}</span>
       </div>
       <div>
         <div className=" w-full justify-center flex items-center gap-5 text-3xl">

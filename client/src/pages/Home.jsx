@@ -2,9 +2,12 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Benefit from "../Components/Benefit";
 import Footer from '../Components/Footer'
+import Header from "../Components/Header";
 const Home = ({signInWithGoogle}) => {
  
   return (
+    <>
+    <Header signInWithGoogle={signInWithGoogle} />
     <div className=" w-full h-auto">
       <div className="flex mt-10 flex-col md:flex-row p-6 md:p-2">
         <div className="w-full md:w-1/2 text-center md:text-left flex flex-col  justify-center md:p-8">
@@ -45,6 +48,7 @@ const Home = ({signInWithGoogle}) => {
       <Benefit />
       <Footer/>
     </div>
+    </>
   );
 };
 

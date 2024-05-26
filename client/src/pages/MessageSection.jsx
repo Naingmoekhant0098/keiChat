@@ -20,6 +20,7 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../Components/Firebase";
+import Model from "../Components/Model";
 const MessageSection = ({
   currentchat,
   setSendMessage,
@@ -46,6 +47,7 @@ const MessageSection = ({
   const [message, setMessage] = useState("");
   const [progress, setProgress] = useState(0);
   const userId = currentchat?.members?.find((id) => id !== currentUser._id);
+  const [isFile, setIsFile] = useState(false);
   const socket = useRef();
   const scroll = useRef();
   const clickImage = useRef();
@@ -66,14 +68,13 @@ const MessageSection = ({
     };
     fetchUser();
   }, [currentchat]);
-   
+
   useEffect(() => {
     if (receiveReaction) {
-       
       const test = messages[receiveReaction?.index]?.likes?.find(
         (id) => id.senderId === receiveReaction.senderId
       );
-      
+
       if (test) {
         const updateReaction = messages[receiveReaction?.index]?.likes.map(
           (lkk) =>
@@ -183,73 +184,73 @@ const MessageSection = ({
         () => {
           getDownloadURL(TaskUpload.snapshot.ref).then((downloadUrl) => {
             setFileUrl(downloadUrl);
-            storeImg(downloadUrl);
+            // storeImg(downloadUrl);
+            setIsFile(true);
           });
         }
       );
     }
   };
-  const storeImg = async (downloadUrl) => {
-    if(downloadUrl){
-     
-    
-    const sendedMessage = {
-      senderId: currentUser?._id,
-      chatId: currentchat?._id,
-      image: downloadUrl,
-    };
-    try {
-      const addMessage = await axios.post(
-        `https://keichat-6.onrender.com/message`,
-        sendedMessage,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-      if (addMessage.status === 200) {
-        setMessages([...messages, addMessage.data.message]);
-        const receiverId = currentchat?.members.find(
-          (id) => id !== currentUser._id
+  const storeImg = async (downloadUrl, text, setText) => {
+    if (downloadUrl) {
+      const sendedMessage = {
+        senderId: currentUser?._id,
+        chatId: currentchat?._id,
+        image: downloadUrl,
+        text: text,
+      };
+      try {
+        const addMessage = await axios.post(
+          `https://keichat-6.onrender.com/message`,
+          sendedMessage,
+          {
+            headers: { "Content-Type": "application/json" },
+          }
         );
-        setSendMessage({ ...addMessage.data.message, receiverId });
-        audio.play();
-        fileUrl(null);
-      }
-    } catch (error) {}
-  }
+        if (addMessage.status === 200) {
+          setMessages([...messages, addMessage.data.message]);
+          setIsFile(false);
+          setText(" ");
+          const receiverId = currentchat?.members.find(
+            (id) => id !== currentUser._id
+          );
+          setSendMessage({ ...addMessage.data.message, receiverId });
+          audio.play();
+          fileUrl(null);
+        }
+      } catch (error) {}
+    }
   };
 
   const sendMessage = async () => {
-    if(message){
-       
-   
-    const sendedMessage = {
-      senderId: currentUser?._id,
-      chatId: currentchat?._id,
-      text: message,
-    };
+    if (message) {
+      const sendedMessage = {
+        senderId: currentUser?._id,
+        chatId: currentchat?._id,
+        text: message,
+      };
 
-    try {
-      const addMessage = await axios.post(
-        `https://keichat-6.onrender.com/message`,
-        sendedMessage,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-
-      if (addMessage.status === 200) {
-        setMessages([...messages, addMessage.data.message]);
-        const receiverId = currentchat?.members.find(
-          (id) => id !== currentUser._id
+      try {
+        const addMessage = await axios.post(
+          `https://keichat-6.onrender.com/message`,
+          sendedMessage,
+          {
+            headers: { "Content-Type": "application/json" },
+          }
         );
-        setSendMessage({ ...addMessage.data.message, receiverId });
-        audio.play();
-        setMessage("");
-        setTyping("");
-      }
-    } catch (error) {}
-  }
+
+        if (addMessage.status === 200) {
+          setMessages([...messages, addMessage.data.message]);
+          const receiverId = currentchat?.members.find(
+            (id) => id !== currentUser._id
+          );
+          setSendMessage({ ...addMessage.data.message, receiverId });
+          audio.play();
+          setMessage("");
+          setTyping("");
+        }
+      } catch (error) {}
+    }
   };
 
   useEffect(() => {
@@ -343,8 +344,15 @@ const MessageSection = ({
   };
 
   return (
-    <div className="h-full flex flex-col gap-3 border-r border-l border-gray-700  ">
-      <div className="w-full flex justify-between py-2   rounded-br-lg px-2 border-b border-gray-700">
+    <div className=" h-full flex flex-col gap-3 border-r border-l border-gray-700  relative ">
+      <Model
+        fileUrl={fileUrl}
+        storeImg={storeImg}
+        isFile={isFile}
+        setIsFile={setIsFile}
+      />
+
+      <div className="w-full flex justify-between py-2     px-2 border-b border-gray-700">
         <div className=" flex gap-2 items-center">
           <FaArrowLeft
             className="block md:hidden text-xl cursor-pointer"
@@ -388,7 +396,7 @@ const MessageSection = ({
         </div>
       </div>
 
-      <div className=" flex flex-1  p-2 rounded-lg flex-col gap-4 overflow-y-auto no-scrollbar">
+      <div className=" flex flex-1  p-2 rounded-lg flex-col gap-4 overflow-y-auto no-scrollbar ">
         {messages &&
           messages.map((message, index) => {
             return (
