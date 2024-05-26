@@ -5,7 +5,7 @@ const Benefit = () => {
     <div className=' my-14'> 
     <h1 className=' text-center text-2xl font-semibold capitalize px-3'>Why is the <span className=" text-yellow-400">best</span> Choice</h1>
 
-    <div className='w-full flex mt-10 gap-4 flex-col md:flex-row p-6'>
+    <div className='w-full flex mt-8 gap-4 flex-col md:flex-row p-6'>
         <div  className='w-full md:w-1/4    p-5 rounded-lg cursor-pointer shadow bg-zinc-800 border border-slate-900 hover:border-slate-500'>
             <h1 className=' text-lg  '>Sleek Design, Intuitive Interface</h1>
             <p className=' text-sm text-gray-400 mt-4 line-clamp-6'>

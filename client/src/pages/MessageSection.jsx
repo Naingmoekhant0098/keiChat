@@ -55,7 +55,7 @@ const MessageSection = ({
   useEffect(() => {
     const fetchUser = async () => {
       const res = await axios.get(
-        `https://keichat-6.onrender.com//auth/getUser/${userId}`,
+        `https://keichat-6.onrender.com/auth/getUser/${userId}`,
         {
           headers: { "Content-Type": "application/json" },
         }
@@ -73,7 +73,7 @@ const MessageSection = ({
       const test = messages[receiveReaction?.index]?.likes?.find(
         (id) => id.senderId === receiveReaction.senderId
       );
-      console.log(test);
+      
       if (test) {
         const updateReaction = messages[receiveReaction?.index]?.likes.map(
           (lkk) =>
