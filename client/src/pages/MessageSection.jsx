@@ -352,7 +352,7 @@ const MessageSection = ({
         setIsFile={setIsFile}
       />
 
-      <div className="w-full flex justify-between py-2     px-2 border-b border-gray-700">
+      <div className="w-full flex justify-between py-2  fixed top-0 z-[300] bg-[#1a1a1a]   px-2 border-b border-gray-700">
         <div className=" flex gap-2 items-center">
           <FaArrowLeft
             className="block md:hidden text-xl cursor-pointer"
@@ -413,7 +413,7 @@ const MessageSection = ({
           })}
       </div>
 
-      <div className="flex items-center w-full gap-1 px-3 py-3">
+      <div className="flex items-center w-full gap-1 px-3 py-3 fixed bottom-0 bg-[#1a1a1a]">
         <div className=" text-xl cursor-pointer hover:text-purple-500">
           <ImAttachment onClick={() => clickImage.current.click()} />
           <input

@@ -43,7 +43,7 @@ const Message = ({ data, handleDelete, currentchat, sentReaction, index }) => {
         <Avatar img={userData?.profile} rounded size={"sm"} className=" mt-1" />
         <div className=" relative no-scrollbar" onClick={() => setReaction(!reaction)}>
           {data && (
-            <div className="relative text-sm bg-slate-700 rounded-lg overflow-hidden border border-slate-800  cursor-pointer no-scrollbar">
+            <div className="relative text-sm bg-slate-900 rounded-lg overflow-hidden border border-slate-800  cursor-pointer no-scrollbar">
               {data?.image && (
                 <img src={data?.image} className=" w-64" alt="notfound" />
               )}
