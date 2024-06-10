@@ -43,19 +43,19 @@ const Message = ({ data, handleDelete, currentchat, sentReaction, index }) => {
         <Avatar img={userData?.profile} rounded size={"sm"} className=" mt-1" />
         <div className=" relative no-scrollbar" onClick={() => setReaction(!reaction)}>
           {data && (
-            <div className="relative text-sm bg-slate-900 rounded-lg overflow-hidden border border-slate-800  cursor-pointer no-scrollbar">
+            <div className="relative text-sm bg-slate-800 rounded-lg overflow-hidden border border-slate-800  cursor-pointer no-scrollbar">
               {data?.image && (
                 <img src={data?.image} className=" w-64" alt="notfound" />
               )}
-              {data?.text && <div className=" p-2 mt-1 pb-1"> {data?.text}</div>}
+              {data?.text && <div className=" p-2 px-4 mt-1 pb-1"> {data?.text}</div>}
 
-              <div className="  text-xs  my-1 ml-2  flex gap-1">
+              <div className="  text-2xl  my-1 ml-2  flex gap-1">
                 {data?.likes &&
                   data?.likes.map((like, ie) => {
                     return (
                       <span
                         key={ie}
-                        className={`   px-0.5 rounded text-xs ${
+                        className={`   px-1 rounded-full text-2xl ${
                           like.senderId === currentUser._id
                             ? "bg-cyan-500"
                             : "bg-slate-400 disabled"

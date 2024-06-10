@@ -17,31 +17,31 @@ const ReactionPopup = ({currentUser,data,sentReaction,reaction ,setReaction,inde
           >
             <div className=" mb-3 flex items-center w-full rounded text-sm  text-center ">
               <span
-                className=" text-lg transition duration-300 hover:text-xl"
+                className=" text-2xl transition duration-300 hover:text-3xl"
                 onClick={() => sentReaction(data?._id, "😁", index)}
               >
                 😁
               </span>
               <span
-                className=" text-lg transition duration-300 hover:text-xl"
+                className=" text-2xl transition duration-300 hover:text-3xl"
                 onClick={() => sentReaction(data?._id, " 😒", index)}
               >
                 😒
               </span>
               <span
-                className=" text-lg transition dreactionuration-300 hover:text-xl"
+                className=" text-2xl transition dreactionuration-300 hover:text-3xl"
                 onClick={() => sentReaction(data?._id, "👍", index)}
               >
                 👍
               </span>
               <span
-                className=" text-lg transition duration-300 hover:text-xl"
+                className=" text-2xl transition duration-300 hover:text-3xl"
                 onClick={() => sentReaction(data?._id, "🥰", index)}
               >
                 🥰
               </span>
               <span
-                className=" text-lg transition duration-300 hover:text-xl"
+                className=" text-2xl transition duration-300 hover:text-3xl"
                 onClick={() => sentReaction(data?._id, "😡", index)}
               >
                 😡
