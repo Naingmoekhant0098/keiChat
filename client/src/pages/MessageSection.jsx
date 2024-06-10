@@ -355,7 +355,7 @@ const MessageSection = ({
         <div className="w-full flex justify-between py-2   fixed md:relative  top-0 z-[300] bg-[#1a1a1a]   px-2 border-b border-gray-700">
           <div className=" flex gap-2 items-center">
             <FaArrowLeft
-              className="block md:hidden text-xl cursor-pointer"
+              className="block mr-2 md:hidden text-xl cursor-pointer"
               onClick={() => setIsOpen(false)}
             />
             <Avatar
