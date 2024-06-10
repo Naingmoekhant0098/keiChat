@@ -11,7 +11,7 @@ const ReactionPopup = ({currentUser,data,sentReaction,reaction ,setReaction,inde
         
          
           <div
-            className={`rounded-lg p-2  w-40 cursor-pointer   bg-slate-800  transition duration-300 
+            className={`rounded-lg p-2  w-auto cursor-pointer   bg-slate-800  transition duration-300 
             }  `}
             
           >
