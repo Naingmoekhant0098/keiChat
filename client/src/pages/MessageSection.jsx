@@ -397,7 +397,7 @@ const MessageSection = ({
         </div>
       </div>
 
-      <div className=" flex flex-1 py-12 md:py-0  p-2 rounded-lg flex-col gap-4 overflow-y-auto no-scrollbar ">
+      <div className=" flex flex-1 py-20 md:py-0  p-2 rounded-lg flex-col gap-4 overflow-y-auto no-scrollbar ">
         {messages &&
           messages.map((message, index) => {
             return (
