@@ -30,8 +30,8 @@ const Profile = ({ currentchat, onlineusers,setIsProfile }) => {
     fetchUser();
   }, [currentchat]);
   useEffect(()=>{
-    scorllRec.current.scrollTo(0,0);
-  })
+    scroll?.current?.scrollTo(0,0);
+  },[])
 
   useEffect(() => {
     const fetchMessage = async () => {
@@ -52,9 +52,9 @@ const Profile = ({ currentchat, onlineusers,setIsProfile }) => {
   const isOnline = onlineusers.find((user) => user.userId === userId);
 
   return (
-    <div className=" flex flex-col gap-8 bg-[#1a1a1a]" ref={scorllRec} >
+    <div className=" flex flex-col gap-8 bg-[#1a1a1a]" >
   
-     <div className=" flex items-center gap-3"> <FaArrowLeft className="  text-xl cursor-pointer" onClick={()=>setIsProfile(false)}/>
+     <div className=" flex items-center gap-3"  ref={scorllRec}> <FaArrowLeft className="  text-xl cursor-pointer" onClick={()=>setIsProfile(false)}/>
       <h1 className=" text-lg">Profile</h1></div>
       <div className=" text-center">
         <div className=" relative w-20 mx-auto">

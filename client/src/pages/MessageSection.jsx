@@ -351,54 +351,53 @@ const MessageSection = ({
         isFile={isFile}
         setIsFile={setIsFile}
       />
-<div className="w-full relative z-30">
+      <div className="w-full relative z-30">
+        <div className="w-full flex justify-between py-2   fixed md:relative  top-0 z-[300] bg-[#1a1a1a]   px-2 border-b border-gray-700">
+          <div className=" flex gap-2 items-center">
+            <FaArrowLeft
+              className="block md:hidden text-xl cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            />
+            <Avatar
+              img={userData?.profile}
+              rounded
+              className=" cursor-pointer"
+              onClick={() => setIsProfile(!isProfile)}
+            />
+            <div>
+              <h1>{userData?.username}</h1>
+              {receiveType ? (
+                <span className=" text-xs   text-cyan-600">
+                  <BeatLoader
+                    color="rgb(8 145 178)"
+                    size={6}
+                    speedMultiplier={1}
+                  />
+                  Typing
+                </span>
+              ) : isOnline ? (
+                <span className="text-xs text-green-400 flex items-center gap-1 mt-1">
+                  <FaCircle style={{ fontSize: "10px" }} />{" "}
+                  <span>Active Now</span>
+                </span>
+              ) : (
+                <span className="text-xs text-gray-500 flex items-center gap-1 mt-1">
+                  <FaCircle style={{ fontSize: "10px" }} />{" "}
+                  <span>Last Seen Recently</span>
+                </span>
+              )}
+            </div>
+          </div>
 
-      <div className="w-full flex justify-between py-2   fixed md:relative  top-0 z-[300] bg-[#1a1a1a]   px-2 border-b border-gray-700">
-        <div className=" flex gap-2 items-center">
-          <FaArrowLeft
-            className="block md:hidden text-xl cursor-pointer"
-            onClick={() => setIsOpen(false)}
-          />
-          <Avatar
-            img={userData?.profile}
-            rounded
-            className=" cursor-pointer"
-            onClick={() => setIsProfile(!isProfile)}
-          />
-          <div>
-            <h1>{userData?.username}</h1>
-            {receiveType ? (
-              <span className=" text-xs   text-cyan-600">
-                <BeatLoader
-                  color="rgb(8 145 178)"
-                  size={6}
-                  speedMultiplier={1}
-                />
-                Typing
-              </span>
-            ) : isOnline ? (
-              <span className="text-xs text-green-400 flex items-center gap-1 mt-1">
-                <FaCircle style={{ fontSize: "10px" }} />{" "}
-                <span>Active Now</span>
-              </span>
-            ) : (
-              <span className="text-xs text-gray-500 flex items-center gap-1 mt-1">
-                <FaCircle style={{ fontSize: "10px" }} />{" "}
-                <span>Last Seen Recently</span>
-              </span>
-            )}
+          <div className=" flex items-center gap-5 text-3xl">
+            <IoMdVideocam className=" hover:border p-1 rounded-full cursor-pointer" />
+            <FaPhoneAlt className=" hover:border p-1 rounded-full cursor-pointer" />
+            <IoEllipsisVerticalSharp className=" text-2xl cursor-pointer" />
           </div>
         </div>
-
-        <div className=" flex items-center gap-5 text-3xl">
-          <IoMdVideocam className=" hover:border p-1 rounded-full cursor-pointer" />
-          <FaPhoneAlt className=" hover:border p-1 rounded-full cursor-pointer" />
-          <IoEllipsisVerticalSharp className=" text-2xl cursor-pointer" />
-        </div>
       </div>
-</div>
 
-      <div className=" flex flex-1  p-2 rounded-lg flex-col gap-4 overflow-y-auto no-scrollbar ">
+      <div className=" flex flex-1 py-12 md:py-0  p-2 rounded-lg flex-col gap-4 overflow-y-auto no-scrollbar ">
         {messages &&
           messages.map((message, index) => {
             return (
@@ -424,7 +423,6 @@ const MessageSection = ({
             hidden
             ref={clickImage}
             onChange={imageHandler}
-           
           />
         </div>
         <div className=" flex flex-1">
@@ -434,7 +432,7 @@ const MessageSection = ({
             onChange={(e) => {
               setMessage(e), setTyping(e);
             }}
-            onFocus={()=>setIsFile(false)}
+            onFocus={() => setIsFile(false)}
             onEnter={sendMessage}
             placeholder="Type a message"
             borderRadius={false}
