@@ -49,7 +49,7 @@ const Message = ({ data, handleDelete, currentchat, sentReaction, index }) => {
               )}
               {data?.text && <div className=" p-2 px-4 mt-1 pb-1"> {data?.text}</div>}
 
-              <div className="  text-2xl  my-1 ml-2  flex gap-1">
+              <div className="  text-2xl mt-1 ml-2  flex gap-1">
                 {data?.likes &&
                   data?.likes.map((like, ie) => {
                     return (
