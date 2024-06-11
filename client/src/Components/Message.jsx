@@ -55,11 +55,7 @@ const Message = ({ data, handleDelete, currentchat, sentReaction, index }) => {
                     return (
                       <span
                         key={ie}
-                        className={`   px-1 rounded-full text-[12px] ${
-                          like.senderId === currentUser._id
-                            ? "bg-cyan-500"
-                            : "bg-slate-400 disabled"
-                        }`}
+                        className={`   px-1 rounded-full text-[12px]  `}
                       >
                         {like?.reaction}
                       </span>
